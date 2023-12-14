@@ -1,0 +1,22 @@
+
+@model LeaveApproval
+@{
+    ViewBag.Title = "leave approval";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<form method="post">
+    
+    <p>
+         <label asp-for="leavedecision">Leave Approve/Reject:</label>
+        <select asp-for="leavedecision">
+            <option value="Approved">Approved</option>
+            <option value="Rejected">Rejected</option>
+        </select>
+    </p>
+    <p>
+        <label asp-for="managercomments">Manager Comments</label>
+        <input asp-for="managercomments"  />
+    </p>
+    <p><button type="submit">Grant</button></p>
+</form>

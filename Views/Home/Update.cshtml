@@ -1,0 +1,55 @@
+@model LoginModel
+@{
+    ViewData["Title"] = "Update";
+}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  background: #e6e1e1;
+  background-image: ;
+}
+
+.content {
+  max-width: 500px;
+  margin: auto;
+  background: #d199fff1;
+  box-shadow:  0 0 5px 5px #888888;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+<div class="content" align="center">
+<form method="post">
+    <p>
+        <label asp-for="EmployeeUsername">Username :</label>
+        <input asp-for="EmployeeUsername" placeholder="Enter User Id"  />
+    </p>
+    <span asp-validation-for="EmployeeUsername" style="color: rgb(245, 38, 38);"></span>
+    
+    <p>
+        <label asp-for="Employeepassword">Password  : </label>
+        <input asp-for="Employeepassword" placeholder="New Password" />
+    </p>
+    <span asp-validation-for="Employeepassword" style="color: rgb(245, 38, 38);"></span>
+    
+    <p>
+        <label asp-for="Employeeconfirmpassword">Password  : </label>
+        <input asp-for="Employeeconfirmpassword" placeholder="Confirm Password" />
+        </p>
+    <span asp-validation-for="Employeeconfirmpassword" style="color: rgb(245, 38, 38);"></span>
+    
+    
+    <p><button type="submit" style="background-color: rgb(154, 200, 245); border-color:  rgb(82, 170, 252);">Submit</button></p>
+</form>
+@section Scripts {
+  @{
+    <Partial name="_ValidationScriptsPartial"/>
+  }
+}
+</div>
+</body>
+</html>

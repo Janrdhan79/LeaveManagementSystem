@@ -1,0 +1,49 @@
+@model LoginModel
+@{
+    ViewData["Title"] = "Login";
+     Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+  
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  background: #e6e1e1;
+  background-image: ;
+}
+
+.content {
+  max-width: 500px;
+  margin: auto;
+  background: #d199fff1;
+  padding: 10px;
+  box-shadow:  0 0 5px 5px #888888;
+}
+</style>
+</head>
+<body>
+<div class="content" align="center">
+<form method="post">
+    <p>
+        <label asp-for="EmployeeUsername">Username :</label>
+        <input asp-for="EmployeeUsername" placeholder="Enter User Id"  />
+    </p>
+    <span asp-validation-for="EmployeeUsername" style="color: rgb(250, 117, 117);"></span>
+    <p>
+        <label asp-for="Employeepassword">Password  : </label>
+        <input asp-for="Employeepassword" placeholder="Enter Password" />
+    </p>
+    <span asp-validation-for="Employeepassword" style="color: rgb(250, 117, 117);"></span>
+  
+  <br><br>
+    <div class align="left" >
+    <a asp-action="Update" align="right">Forgot Password ?</a>
+    </div>
+    <p><button type="submit" style="background-color: rgb(154, 200, 245); border-color:  rgb(82, 170, 252);">Login</button></p>
+</form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+@model  IEnumerable<Leavestatus>
+@{
+    ViewBag.Title = "Leavestatus";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <thead>
+  <tr>
+    <th>Leave Id</th>
+    <th>Leave From</th>
+    <th>Leave To</th>
+    <th>Leave Type</th>
+    <th>Number of Days</th>
+    <th>Leave Aprrover</th>
+    <th>Manager Comments</th>
+    <th>Leave Description</th>
+    <th>Status of Leave</th>
+  </tr>
+   </thead>
+    <tbody>
+        @foreach (Leavestatus leavestatus in Model)
+        {
+            <tr>
+              <td>@leavestatus.leaveid</td>
+                <td>@leavestatus.leavefrom</td>
+                <td>@leavestatus.leaveto</td>
+                <td>@leavestatus.leavetype</td>
+                <td>@leavestatus.numberofdays</td>
+                <td>@leavestatus.approver</td>
+                <td>@leavestatus.leavedecision</td>
+                <td>@leavestatus.descripition</td>
+                <td>@leavestatus.managercomments</td>
+                @if(@leavestatus.managercomments=="pending"){
+                <td>
+                <a asp-route-id="@leavestatus.leaveid" asp-action="Delete" asp-controller="Leave">
+                        cancel
+                    </a>
+                
+                </td>}
+            </tr>
+        }
+    </tbody>
+  
+</table>
+
+</body>
+</html>
+
+
+

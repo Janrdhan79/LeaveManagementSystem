@@ -1,0 +1,63 @@
+
+@model Leaverequest
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  background: #1d0e0e;
+  background-image: ;
+}
+
+.content {
+  max-width: 500px;
+  margin: auto;
+  background:  #d199fff1;
+  padding: 10px;
+  box-shadow:  0 0 5px 5px #888888;
+}
+</style>
+</head>
+<body>
+<div class="content" >
+
+<form  style="margin: auto; width: 150px" method="post">
+    <p>
+        <label asp-for="leavefrom">From:</label>
+        <input  asp-for="leavefrom" />
+        <span asp-validation-for="leavefrom" style="color: rgb(245, 38, 38);"></span>
+    </p>
+    <p>
+        <label asp-for="leaveto" >To:</label>
+        <input  asp-for="leaveto" />
+        <span asp-validation-for="leaveto" style="color: rgb(245, 38, 38);"></span>
+    </p>
+    
+    <p>
+        <label asp-for="leavetype">Leave Type:</label>
+        <select asp-for="leavetype">
+            <option value="Privilege Leave">Privilege Leave</option>
+            <option value="Casual Leave">Casual Leave</option>
+            <option value="Sick Leave">Sick Leave</option>
+        </select>
+    </p>
+    <p>
+        <label asp-for="numberofdays">No of Days:</label>
+        <input asp-for="numberofdays" />
+         <span asp-validation-for="numberofdays" style="color: rgb(245, 38, 38);"></span>
+    </p>
+    <p>
+        <label asp-for="descripition" >Description:</label>
+        <input asp-for="descripition"  />
+         <span asp-validation-for="descripition" style="color: rgb(245, 38, 38);"></span>
+    </p>
+    <p><button type="submit">Apply</button></p>
+</form>
+</div>
+</body>
+</html>

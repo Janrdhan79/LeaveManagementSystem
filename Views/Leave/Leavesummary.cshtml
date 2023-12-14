@@ -1,0 +1,47 @@
+@model  IEnumerable<Leavesummary>
+@{
+    ViewBag.Title = "ViewLeave";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <thead>
+  <tr>
+    <th>Leave Type</th>
+    <th>Leave Eligible</th>
+    <th>Leave Taken</th>
+    <th>Leave Remaining</th>
+  </tr>
+   </thead>
+    <tbody>
+        @foreach (Leavesummary leavesummary in Model)
+        {
+            <tr>
+                <td>@leavesummary.leavetype</td>
+                <td>@leavesummary.leaveeligible</td>
+                <td>@leavesummary.leavetaken</td>
+                <td>@leavesummary.leaveavailable</td>
+            </tr>
+        }
+    </tbody>
+  
+</table>
+
+</body>
+</html>
+
+
+
